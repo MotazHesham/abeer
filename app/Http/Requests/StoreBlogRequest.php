@@ -29,8 +29,7 @@ class StoreBlogRequest extends FormRequest
             'photo' => [
                 'required',
             ],
-            'tags' => [
-                'string',
+            'tags' => [ 
                 'nullable',
             ],
         ];

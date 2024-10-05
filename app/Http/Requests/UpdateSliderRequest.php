@@ -17,8 +17,7 @@ class UpdateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => [
-                'string',
+            'title' => [ 
                 'required',
             ],
             'photo' => [

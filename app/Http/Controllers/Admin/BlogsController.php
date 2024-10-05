@@ -82,7 +82,9 @@ class BlogsController extends Controller
 
     public function store(StoreBlogRequest $request)
     {
-        $blog = Blog::create($request->all());
+        $validatedRequest  = $request->all();
+        $validatedRequest['tags'] = implode(',',$request->tags); 
+        $blog = Blog::create($validatedRequest);
 
         if ($request->input('photo', false)) {
             $blog->addMedia(storage_path('tmp/uploads/' . basename($request->input('photo'))))->toMediaCollection('photo');
@@ -104,7 +106,9 @@ class BlogsController extends Controller
 
     public function update(UpdateBlogRequest $request, Blog $blog)
     {
-        $blog->update($request->all());
+        $validatedRequest  = $request->all();
+        $validatedRequest['tags'] = implode(',',$request->tags); 
+        $blog->update($validatedRequest); 
 
         if ($request->input('photo', false)) {
             if (! $blog->photo || $request->input('photo') !== $blog->photo->file_name) {

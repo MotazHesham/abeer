@@ -41,8 +41,8 @@
                 <span class="help-block">{{ trans('cruds.blog.fields.photo_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="tags">{{ trans('cruds.blog.fields.tags') }}</label>
-                <input class="form-control {{ $errors->has('tags') ? 'is-invalid' : '' }}" type="text" name="tags" id="tags" value="{{ old('tags', '') }}">
+                <label for="tags">{{ trans('cruds.blog.fields.tags') }}</label> 
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="tags[]" placeholder="add tags ..." data-role="tagsinput"  id="tags" value="{{ implode(',',old('tags',[])) }}" required>
                 @if($errors->has('tags'))
                     <div class="invalid-feedback">
                         {{ $errors->first('tags') }}

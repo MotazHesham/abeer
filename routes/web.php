@@ -1,6 +1,12 @@
 <?php
 
-Route::redirect('/', '/login');
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', 'FrontendController@home')->name('home');
+Route::get('single-blog/{id}','FrontendController@single_blog')->name('single-blog');
+Route::post('/contact-us', 'FrontendController@contact_us')->name('contact-us');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));

@@ -11,7 +11,7 @@
             @csrf
             <div class="form-group">
                 <label class="required" for="title">{{ trans('cruds.slider.fields.title') }}</label>
-                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', '') }}" required>
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title[]" placeholder="add titles ..." data-role="tagsinput"  id="title" value="{{ implode(',',old('title',[])) }}" required>
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
@@ -70,9 +70,7 @@
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
     },
     params: {
-      size: 3,
-      width: 966,
-      height: 495
+      size: 3
     },
     success: function (file, response) {
       $('form').find('input[name="photo"]').remove()

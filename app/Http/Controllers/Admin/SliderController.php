@@ -35,7 +35,9 @@ class SliderController extends Controller
 
     public function store(StoreSliderRequest $request)
     {
-        $slider = Slider::create($request->all());
+        $validatedRequest  = $request->all();
+        $validatedRequest['title'] = implode(',',$request->title);
+        $slider = Slider::create($validatedRequest);
 
         if ($request->input('photo', false)) {
             $slider->addMedia(storage_path('tmp/uploads/' . basename($request->input('photo'))))->toMediaCollection('photo');
@@ -57,7 +59,9 @@ class SliderController extends Controller
 
     public function update(UpdateSliderRequest $request, Slider $slider)
     {
-        $slider->update($request->all());
+        $validatedRequest  = $request->all();
+        $validatedRequest['title'] = implode(',',$request->title); 
+        $slider->update($validatedRequest);
 
         if ($request->input('photo', false)) {
             if (! $slider->photo || $request->input('photo') !== $slider->photo->file_name) {

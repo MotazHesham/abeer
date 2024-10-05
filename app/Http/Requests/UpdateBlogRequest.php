@@ -29,8 +29,7 @@ class UpdateBlogRequest extends FormRequest
             'photo' => [
                 'required',
             ],
-            'tags' => [
-                'string',
+            'tags' => [ 
                 'nullable',
             ],
         ];

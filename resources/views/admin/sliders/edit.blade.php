@@ -9,10 +9,10 @@
     <div class="card-body">
         <form method="POST" action="{{ route("admin.sliders.update", [$slider->id]) }}" enctype="multipart/form-data">
             @method('PUT')
-            @csrf
+            @csrf 
             <div class="form-group">
                 <label class="required" for="title">{{ trans('cruds.slider.fields.title') }}</label>
-                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $slider->title) }}" required>
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title[]" placeholder="add titles ..." data-role="tagsinput"  id="title" value="{{ old('title', $slider->title) }}" required>
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
@@ -71,9 +71,7 @@
       'X-CSRF-TOKEN': "{{ csrf_token() }}"
     },
     params: {
-      size: 3,
-      width: 966,
-      height: 495
+      size: 3
     },
     success: function (file, response) {
       $('form').find('input[name="photo"]').remove()

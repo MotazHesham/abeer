@@ -98,7 +98,7 @@ return [
             'title'             => 'Title',
             'title_helper'      => ' ',
             'photo'             => 'الصورة',
-            'photo_helper'      => '966X495',
+            'photo_helper'      => ' ',
             'status'            => 'الحالة',
             'status_helper'     => ' ',
             'created_at'        => 'Created at',
