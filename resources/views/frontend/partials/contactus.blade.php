@@ -97,16 +97,6 @@
             </div>
             <!--Contact Form Column End-->
 
-        </div>
-
-        <!--Google Map Row Start-->
-        <div class="row">
-            <div class="col-md-12 google-map">
-                <div id="map" data-latitude="-37.817214" data-longitude="144.955925" data-zoom="15">
-                </div>
-            </div>
-        </div>
-        <!--Google Map Row End-->
-
+        </div> 
     </div>
 </section>
