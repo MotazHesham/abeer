@@ -35,6 +35,7 @@ class FrontendController extends Controller
             'name' => 'required',
             'email' => 'required|email', 
             'message' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
         Contactu::create([
             'name' => $request->name,

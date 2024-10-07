@@ -131,6 +131,7 @@
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
     <!--Site Main JS-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script> 
 
         $('#contact-form').on('submit', function(e) {

@@ -86,6 +86,7 @@
                         <textarea class="input-field cf-validate" id="cf-message" name="message" rows="5" placeholder="الرسالة" required></textarea>
                     </div>
 
+                    @include('partials.recaptcha')
                     <div class="alert-container col-md-12"></div>
 
                     <!--submit button-->
