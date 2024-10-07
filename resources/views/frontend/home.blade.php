@@ -167,6 +167,7 @@
                     success: function(data) {
                         $("#contact-form .input-field").val("");
                         showAlertBox(data.status, data.responseText);
+                        $('.g-recaptcha').remove();
                     },
                     error: function(data) {
                         console.log(data);

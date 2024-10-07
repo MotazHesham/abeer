@@ -140,8 +140,24 @@
     },
     params: {
       size: 2,
-      width: 4096,
-      height: 4096
+      width: 800,
+      height: 600
+    },
+    accept: function(file, done) {
+      var _URL = window.URL || window.webkitURL;
+      var img = new Image();
+      img.onload = function() {
+        // Check image dimensions
+        if (img.width > 800 || img.height > 600) {
+          done("Image exceeds the maximum allowed dimensions of 800x600.");
+        } else {
+          done();
+        }
+      };
+      img.onerror = function() {
+        done("Invalid file type.");
+      };
+      img.src = _URL.createObjectURL(file);
     },
     success: function (file, response) {
       $('form').find('input[name="photo"]').remove()

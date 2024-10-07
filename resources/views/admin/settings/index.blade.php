@@ -16,37 +16,7 @@
                         </th>
                         <th>
                             {{ trans('cruds.setting.fields.id') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.description') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.phone') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.address') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.email') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.facebook') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.twitter') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.linkedin') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.youtubte') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.about_description') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.setting.fields.about_photo') }}
-                        </th>
+                        </th> 
                         <th>
                             {{ trans('cruds.setting.fields.about_cv') }}
                         </th>
@@ -63,41 +33,7 @@
                             </td>
                             <td>
                                 {{ $setting->id ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->description ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->phone ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->address ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->email ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->facebook ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->twitter ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->linkedin ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->youtubte ?? '' }}
-                            </td>
-                            <td>
-                                {{ $setting->about_description ?? '' }}
-                            </td>
-                            <td>
-                                @if($setting->about_photo)
-                                    <a href="{{ $setting->about_photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                        <img src="{{ $setting->about_photo->getUrl('thumb') }}">
-                                    </a>
-                                @endif
-                            </td>
+                            </td>  
                             <td>
                                 @if($setting->about_cv)
                                     <a href="{{ $setting->about_cv->getUrl() }}" target="_blank">

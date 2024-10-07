@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@home')->name('home');
 Route::get('single-blog/{id}','FrontendController@single_blog')->name('single-blog');
+Route::get('/#/contact', 'FrontendController@home')->name('contact');
 Route::post('/contact-us', 'FrontendController@contact_us')->name('contact-us');
 
 Route::get('/home', function () {
