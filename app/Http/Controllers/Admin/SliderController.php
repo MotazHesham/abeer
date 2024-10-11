@@ -35,8 +35,7 @@ class SliderController extends Controller
 
     public function store(StoreSliderRequest $request)
     {
-        $validatedRequest  = $request->all();
-        $validatedRequest['title'] = implode(',',$request->title);
+        $validatedRequest  = $request->all(); 
         $slider = Slider::create($validatedRequest);
 
         if ($request->input('photo', false)) {
@@ -59,8 +58,7 @@ class SliderController extends Controller
 
     public function update(UpdateSliderRequest $request, Slider $slider)
     {
-        $validatedRequest  = $request->all();
-        $validatedRequest['title'] = implode(',',$request->title); 
+        $validatedRequest  = $request->all(); 
         $slider->update($validatedRequest);
 
         if ($request->input('photo', false)) {

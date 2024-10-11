@@ -17,12 +17,12 @@ class FrontendController extends Controller
     public function home(){
         $setting = Setting::first();
         $blogs = Blog::orderBy('created_at','desc')->paginate(9);
-        $slider = Slider::where('status',1)->first();
+        $sliders = Slider::where('status',1)->get();
         $qualifications = Qualification::get();
         $services = Service::get();
         $galleryCategories = GalleryCategory::get();
         $galleries = Gallery::with('category')->get();
-        return view('frontend.home',compact('setting','blogs','slider','qualifications','services','galleryCategories','galleries')); 
+        return view('frontend.home',compact('setting','blogs','sliders','qualifications','services','galleryCategories','galleries')); 
     }
 
     public function single_blog($id){

@@ -7,19 +7,7 @@
 
         <div class="card-body">
             <form method="POST" action="{{ route('admin.sliders.store') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label class="required" for="title">{{ trans('cruds.slider.fields.title') }}</label>
-                    <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title[]"
-                        placeholder="add titles ..." data-role="tagsinput" id="title"
-                        value="{{ implode(',', old('title', [])) }}" required>
-                    @if ($errors->has('title'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('title') }}
-                        </div>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.slider.fields.title_helper') }}</span>
-                </div>
+                @csrf 
                 <div class="form-group">
                     <label class="required" for="photo">{{ trans('cruds.slider.fields.photo') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">

@@ -24,8 +24,7 @@ class initSeeder extends Seeder
         $destinationPath = public_path('frontend/img/background/bg-img-tmp.jpg');
         copy($sourcePath, $destinationPath);
 
-        $slider = Slider::create([
-            'title' => 'Art is,a wonderful feeling',
+        $slider = Slider::create([ 
             'status' => 1,
         ]); 
         $slider->addMedia($destinationPath)->toMediaCollection('photo');

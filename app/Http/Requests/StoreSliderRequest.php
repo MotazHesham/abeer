@@ -16,10 +16,7 @@ class StoreSliderRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            'title' => [ 
-                'required',
-            ],
+        return [ 
             'photo' => [
                 'required',
             ],

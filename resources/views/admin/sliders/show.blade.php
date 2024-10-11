@@ -22,15 +22,7 @@
                         <td>
                             {{ $slider->id }}
                         </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.slider.fields.title') }}
-                        </th>
-                        <td>
-                            {{ $slider->title }}
-                        </td>
-                    </tr>
+                    </tr> 
                     <tr>
                         <th>
                             {{ trans('cruds.slider.fields.photo') }}

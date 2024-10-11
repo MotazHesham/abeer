@@ -177,6 +177,15 @@
             }
         });
     </script>
+    
+    <script>
+        //Super Slider
+        $('#slides').superslides({
+            animation: 'fade',
+            play: 3000
+        });
+    </script>
+
 </body>
 
 </html>
